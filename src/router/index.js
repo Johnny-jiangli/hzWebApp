@@ -4,6 +4,7 @@ import Home from '../views/home'
 import DeviceManagement from '../views/DeviceManagement'
 import WarningMessage from '../views/WarningMessage'
 import SystemManagement from '../views/SystemManagement'
+import Test from '../components/test'
 
 
 Vue.use(Router)
@@ -29,6 +30,11 @@ export default new Router({
       path:'/systemmanagement',
       name:'system-management',
       component:SystemManagement
+    },
+    {
+      path:'/test',
+      name:'test',
+      component:Test
     }
   ]
 })

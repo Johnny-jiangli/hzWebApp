@@ -4,10 +4,9 @@
     <button
       v-for="menuName in menuList"
       v-bind:key="menuName.pathname"
-      v-bind:class="['menu-button',{active:actionMenu == menuName.pathname}]"
+      v-bind:class="['menu-button',{active:actionMenu === menuName.pathname}]"
       v-on:click="actionMenu = menuName.pathname"
     >
-      <p>{{ menuName.url}}</p>
       {{menuName.name}}
     </button>
   </div>
@@ -31,8 +30,8 @@
           return {
             actionMenu:'TableA',
             menuList:[
-              {name:'设备管理',pathname:'TableA',url:'../assets/img/icon_monitor1.png'},
-              {name:'设备布防',pathname:'TableB',url:'../assets/img/icon_2_1.png'},
+              {name:'设备管理',pathname:'TableA'},
+              {name:'设备布防',pathname:'TableB'},
               {name:'推送设置',pathname:'TableC'},
               {name:'底库管理',pathname:'TableD'}
             ]
@@ -66,11 +65,34 @@
     margin: 0 3%;
     background-color: #f5f6fa;
     border-bottom:#cccccc solid 1px ;
-    /*-webkit-border-radius: 3px;*/
-    /*-moz-border-radius: 3px;*/
-    /*border-radius: 3px;*/
-    /*box-shadow: #cccccc 0px 0px 2px 2px;*/
-
+  }
+  .button-warpper>button:first-child{
+    background: url("../assets/img/icon_monitor1.png")10% 50% no-repeat #c6cbd1;
+  }
+  .button-warpper>button:first-child:hover,
+  .button-warpper>button:first-child:active{
+    background: url("../assets/img/icon_monitor1.png")10% 50% no-repeat #465484;
+  }
+  .button-warpper>button:last-child{
+    background: url("../assets/img/icon_ph_1.png")10% 50% no-repeat #c6cbd1;
+  }
+  .button-warpper>button:last-child:hover,
+  .button-warpper>button:last-child:active{
+    background: url("../assets/img/icon_ph_1.png")10% 50% no-repeat #465484;
+  }
+  .button-warpper>button:nth-child(3){
+    background: url("../assets/img/icon_message1.png")10% 50% no-repeat #c6cbd1;
+  }
+  .button-warpper>button:nth-child(3):hover,
+  .button-warpper>button:nth-child(3):active{
+    background: url("../assets/img/icon_message1.png")10% 50% no-repeat #465484 ;
+  }
+  .button-warpper>button:nth-child(2){
+    background: url("../assets/img/icon_dd.png")10% 50% no-repeat #c6cbd1;
+  }
+  .button-warpper>button:nth-child(2):hover,
+  .button-warpper>button:nth-child(2):active{
+    background: url("../assets/img/icon_dd.png")10% 50% no-repeat #465484 ;
   }
 
   .menu-button {
@@ -84,14 +106,9 @@
     margin-top: 11px;
     font-size: 16px;
     color: #fff;
+    border: none;
+  }
 
-  }
-  .menu-button:hover {
-    background: #e0e0e0;
-  }
-  .menu-button.active {
-    background: #465484;
-  }
 .tableMainStyle {
     height: 74%;
     margin: 1% 3%;

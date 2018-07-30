@@ -1,62 +1,44 @@
 <template>
   <div>
-    <el-table
-      :data="tableData"
-      style="width: 100%"
-    >
-      <el-table-column
-        fixed
-        prop="deviceName"
-        label="名称"
-      >
+    <el-table :data="tableData" style="width: 100%"
+             >
+      <el-table-column fixed prop="deviceName" label="序号">
+
       </el-table-column>
-      <el-table-column
-        prop="manufacturer"
-        label="产商"
-      >
+      <el-table-column prop="manufacturer" label="账号">
+
       </el-table-column>
-      <el-table-column
-        prop="userName"
-        label="用户名"
-      >
+      <el-table-column prop="userName" label="姓名">
+
       </el-table-column>
-      <el-table-column
-        prop="password"
-        label="密码"
-      >
+      <el-table-column prop="password" label="性别">
+
       </el-table-column>
-      <el-table-column
-        prop="ip"
-        label="IP"
-      >
+      <el-table-column prop="ip" label="电话">
+
       </el-table-column>
-      <el-table-column
-        prop="port"
-        label="端口"
-      >
+      <el-table-column prop="port" label="角色">
+
       </el-table-column>
-      <el-table-column
-        prop="address"
-        label="安装地点"
-      >
+      <el-table-column prop="address" label="备注">
+
       </el-table-column>
-      <el-table-column
-        fixed="right"
-        label="操作"
-        width="300px">
+      <el-table-column fixed="right" label="操作" width="300px">
         <template slot-scope="scope">
-          <el-button @click="handleClickDetail(scope.row)" size="small"><img src="../../assets/img/icon_more.png"
-                                                                             style="padding: 0 2px;" alt="">详情
+          <el-button @click="handleClickDetail(scope.row)" size="small">
+            <i class="el-icon-document"></i>
+            详情
           </el-button>
-          <el-button @click="handleClickEdit(scope.row)" size="small"><img src="../../assets/img/icon_edit.png" alt="">编辑
+          <el-button @click="handleClickEdit(scope.row)" size="small">
+            <i class="el-icon-edit-outline"></i>编辑
           </el-button>
-          <el-button @click="handleClickDelete(scope.row)" type="danger" size="small"><img
-            src="../../assets/img/icon_delete.png" alt="">删除
+          <el-button @click="handleClickDelete(scope.row)" size="small">
+            <i class="el-icon-delete"></i>
+            删除
           </el-button>
         </template>
       </el-table-column>
     </el-table>
-
 
     <!--详情模态框-->
     <el-dialog title="设备详情:" :visible.sync="dialogDetail">
@@ -122,7 +104,6 @@
         <el-button type="primary" @click="dialogDetail = false">确 定</el-button>
       </div>
     </el-dialog>
-
     <!--编辑模态框-->
     <el-dialog title="设备编辑" :visible.sync="dialogEdit">
       <el-form :model="detailsData" :label-width="30">
@@ -179,9 +160,9 @@
           </el-col>
           <el-col :span="20">
             <!--<el-form-item label="备注：" :label-width="formLabelWidth">-->
-              <!--<el-select v-model="form.region" placeholder="请选择活动区域">-->
-                <!--<el-input v-model="form.name" about-complete="off"></el-input>-->
-              <!--</el-select>-->
+            <!--<el-select v-model="form.region" placeholder="请选择活动区域">-->
+            <!--<el-input v-model="form.name" about-complete="off"></el-input>-->
+            <!--</el-select>-->
             <!--</el-form-item>-->
             <el-form-item label="活动区域:" :label-width="formLabelWidth" >
               <el-select v-model="form.region" placeholder="请选择活动区域">
@@ -197,8 +178,6 @@
         <el-button type="primary" @click="dialogFormVisible = false">确 定</el-button>
       </div>
     </el-dialog>
-
-
     <!--删除模态框-->
     <el-dialog
       title="提示"
@@ -211,15 +190,15 @@
     <el-button type="primary" @click="centerDialogVisible = false">确 定</el-button>
   </span>
     </el-dialog>
-
   </div>
 </template>
 
 <script>
   export default {
-    name: "table-a",
+    name: "system-user",
     data() {
       return {
+        loading:true,
         detailsData: {},
         tableData: [{
           date: '2016-05-02',
