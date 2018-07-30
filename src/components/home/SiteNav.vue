@@ -57,7 +57,7 @@
     justify-content: center;
   }
   ul{
-    margin-top: 10px;
+    margin-top: 5px;
   }
   ul li a{
     font-size: 18px;

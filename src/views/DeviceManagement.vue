@@ -6,7 +6,10 @@
       v-bind:key="menuName.pathname"
       v-bind:class="['menu-button',{active:actionMenu == menuName.pathname}]"
       v-on:click="actionMenu = menuName.pathname"
-    >{{menuName.name}}</button>
+    >
+      <p>{{ menuName.url}}</p>
+      {{menuName.name}}
+    </button>
   </div>
 
 
@@ -28,8 +31,8 @@
           return {
             actionMenu:'TableA',
             menuList:[
-              {name:'设备管理',pathname:'TableA'},
-              {name:'设备布防',pathname:'TableB'},
+              {name:'设备管理',pathname:'TableA',url:'../assets/img/icon_monitor1.png'},
+              {name:'设备布防',pathname:'TableB',url:'../assets/img/icon_2_1.png'},
               {name:'推送设置',pathname:'TableC'},
               {name:'底库管理',pathname:'TableD'}
             ]
@@ -76,7 +79,7 @@
     border-top-left-radius: 3px;
     border-top-right-radius: 3px;
     cursor: pointer;
-    background: #f0f0f0;
+    background: #c6cbd1;
     margin-right: 10px;
     margin-top: 11px;
     font-size: 16px;
