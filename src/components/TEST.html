@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HelloWorld</title>
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+  <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+</head>
+<body>
+<div id="app">
+
+</div>
+<script>
+  const Foo = { template: '<div>This is Home</div>' }
+  const Baz = { template: '<div>This is baz</div>' }
+  const Bar = { template: '<div>This is Bar {{ $route.params.id }}</div>' }
+
+  const router=new VueRouter({
+    routes:[
+      {
+        path:'/',
+        components:{
+          default:Foo,
+          nav:Bar,
+          sidebar:Baz
+        }
+      }
+    ]
+  })
+  new Vue({
+    router,
+    template: `
+  <div id="app">
+    <router-view></router-view>
+    <router-view name="nav" class="left"></router-view>
+    <router-view name="sidebar" class="right"></router-view>
+  </div>
+  `
+  }).$mount('#app')
+</script>
+
+</body>
+</html>
