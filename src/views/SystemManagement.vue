@@ -61,27 +61,27 @@
     background-color: #f5f6fa;
     border-bottom:#cccccc solid 1px ;
   }
-  .button-warpper>button:first-child{
-    background: url("../assets/img/icon_function1.png")10% 50% no-repeat #c6cbd1;
-  }
-  .button-warpper>button:first-child:hover,
-  .button-warpper>button:first-child:active{
-    background: url("../assets/img/icon_function1.png")10% 50% no-repeat #465484;
-  }
-  .button-warpper>button:last-child{
-    background: url("../assets/img/icon_set1.png")10% 50% no-repeat #c6cbd1;
-  }
-  .button-warpper>button:last-child:hover,
-  .button-warpper>button:last-child:active{
-    background: url("../assets/img/icon_set1.png")10% 50% no-repeat #465484;
-  }
-  .button-warpper>button:nth-child(2){
-    background: url("../assets/img/icon_user1.png")10% 50% no-repeat #c6cbd1;
-  }
-  .button-warpper>button:nth-child(2):hover,
-  .button-warpper>button:nth-child(2):active{
-    background: url("../assets/img/icon_user1.png")10% 50% no-repeat #465484;
-  }
+  /*.button-warpper>button:first-child{*/
+    /*background: url("../assets/img/icon_function1.png")10% 50% no-repeat #c6cbd1;*/
+  /*}*/
+  /*.button-warpper>button:first-child:hover,*/
+  /*.button-warpper>button:first-child:active{*/
+    /*background: url("../assets/img/icon_function1.png")10% 50% no-repeat #465484;*/
+  /*}*/
+  /*.button-warpper>button:last-child{*/
+    /*background: url("../assets/img/icon_set1.png")10% 50% no-repeat #c6cbd1;*/
+  /*}*/
+  /*.button-warpper>button:last-child:hover,*/
+  /*.button-warpper>button:last-child:active{*/
+    /*background: url("../assets/img/icon_set1.png")10% 50% no-repeat #465484;*/
+  /*}*/
+  /*.button-warpper>button:nth-child(2){*/
+    /*background: url("../assets/img/icon_user1.png")10% 50% no-repeat #c6cbd1;*/
+  /*}*/
+  /*.button-warpper>button:nth-child(2):hover,*/
+  /*.button-warpper>button:nth-child(2):active{*/
+    /*background: url("../assets/img/icon_user1.png")10% 50% no-repeat #465484;*/
+  /*}*/
   .menu-button {
     width: 134px;
     height: 48px;

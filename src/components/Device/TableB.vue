@@ -1,11 +1,8 @@
 <template>
   <div>
-
-
     <el-table
       :data="tableData"
       style="width: 100%"
-
     >
       <el-table-column
         fixed
@@ -171,6 +168,7 @@
         // console.log("hello")
         // console.log(index)
         console.log(row)
+        this.dialogTableVisible =true;
       },
       handleDelete(index, row) {
         console.log(index, row);

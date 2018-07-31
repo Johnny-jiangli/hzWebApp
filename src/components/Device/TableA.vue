@@ -58,62 +58,62 @@
     </el-table>
 
 
-    <!--详情模态框-->
+    详情模态框
     <el-dialog title="设备详情:" :visible.sync="dialogDetail">
-      <el-form :model="detailsData">
+      <el-form :model="detailData">
         <el-col :span="12">
           <el-form-item label="名称:" :label-width="formLabelWidth">
-            <span>{{detailsData.name}}</span>
+            <span>{{detailData.deviceName}}</span>
           </el-form-item>
         </el-col>
         <el-col :span="12">
           <el-form-item label="产商:" :label-width="formLabelWidth">
-            <span>{{detailsData.name}}</span>
+            <span>{{detailData.manufacturer}}</span>
           </el-form-item>
         </el-col>
         <el-col :span="12">
           <el-form-item label="用户名:" :label-width="formLabelWidth">
-            <span>{{detailsData.name}}</span>
+            <span>{{detailData.userName}}</span>
           </el-form-item>
         </el-col>
         <el-col :span="12">
           <el-form-item label="密码:" :label-width="formLabelWidth">
-            <span>{{detailsData.name}}</span>
+            <span>{{detailData.password}}</span>
           </el-form-item>
         </el-col>
         <el-col :span="12">
           <el-form-item label="IP:" :label-width="formLabelWidth">
-            <span>{{detailsData.name}}</span>
+            <span>{{detailData.ip}}</span>
           </el-form-item>
         </el-col>
         <el-col :span="12">
           <el-form-item label="端口号:" :label-width="formLabelWidth">
-            <span>{{detailsData.name}}</span>
+            <span>{{detailData.port}}</span>
           </el-form-item>
         </el-col>
         <el-col :span="12">
           <el-form-item label="安装地点:" :label-width="formLabelWidth">
-            <span>{{detailsData.name}}</span>
+            <span>{{detailData.address}}</span>
           </el-form-item>
         </el-col>
         <el-col :span="12">
           <el-form-item label="流分发服务器:" :label-width="formLabelWidth">
-            <span>{{detailsData.name}}</span>
+            <span>{{detailData.channelNums}}</span>
           </el-form-item>
         </el-col>
         <el-col :span="12">
           <el-form-item label="设备型号:" :label-width="formLabelWidth">
-            <span>{{detailsData.name}}</span>
+            <span>{{detailData.deviceModel}}</span>
           </el-form-item>
         </el-col>
         <el-col :span="12">
           <el-form-item label="通道个数:" :label-width="formLabelWidth">
-            <span>{{detailsData.name}}</span>
+            <span>{{}}</span>
           </el-form-item>
         </el-col>
         <el-col :span="24">
           <el-form-item label="备注:" :label-width="formLabelWidth">
-            <span>{{detailsData.name}}</span>
+            <span>{{detailData.remark}}</span>
           </el-form-item>
         </el-col>
       </el-form>
@@ -123,7 +123,7 @@
       </div>
     </el-dialog>
 
-    <!--编辑模态框-->
+    编辑模态框
     <el-dialog title="设备编辑" :visible.sync="dialogEdit">
       <el-form :model="detailsData" :label-width="30">
         <el-row :gutter="24">
@@ -198,8 +198,7 @@
       </div>
     </el-dialog>
 
-
-    <!--删除模态框-->
+    删除模态框
     <el-dialog
       title="提示"
       :visible.sync="centerDialogVisible"
@@ -220,38 +219,84 @@
     name: "table-a",
     data() {
       return {
-        detailsData: {},
+        detailData: {},
         tableData: [{
-          date: '2016-05-02',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1518 弄'
-        }, {
-          date: '2016-05-04',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1517 弄'
-        }, {
-          date: '2016-05-01',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1519 弄'
-        }, {
-          date: '2016-05-03',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1516 弄'
-        }],
+          "remark": null,
+          "createTime": 1532663083000,
+          "createId": 1,
+          "updateTime": null,
+          "updateId": null,
+          "deviceId": "d53f4f00dcb440fc819e51d6112ad606",
+          "mediaId": null,
+          "deviceName": 'cecece',
+          "deviceModel": null,
+          "manufacturer":'大华',
+          "userName":'johnny',
+          "password":'123456',
+          "ip": '123456',
+          "port": '8080',
+          "setUpTime": null,
+          "channels": null,
+          "address": 'chengdu',
+          "status": null,
+          "channelNums": null
+        },
+          {
+            "remark": null,
+            "createTime": 1532507655000,
+            "createId": null,
+            "updateTime": null,
+            "updateId": null,
+            "deviceId": "6f074dc205e84f97bbb0405b6a14124c",
+            "mediaId": null,
+            "deviceName": null,
+            "deviceModel": null,
+            "manufacturer": null,
+            "userName": null,
+            "password": null,
+            "ip": null,
+            "port": null,
+            "setUpTime": null,
+            "channels": null,
+            "address": null,
+            "status": null,
+            "channelNums": null
+          },
+          {
+            "remark": "1",
+            "createTime": 1532489324000,
+            "createId": null,
+            "updateTime": null,
+            "updateId": null,
+            "deviceId": "1",
+            "mediaId": "4",
+            "deviceName": "1",
+            "deviceModel": "1",
+            "manufacturer": "1",
+            "userName": "1",
+            "password": "1",
+            "ip": "1",
+            "port": "1",
+            "setUpTime": 1531929600000,
+            "channels": 1,
+            "address": "1",
+            "status": "1",
+            "channelNums": null
+          }],
         dialogDetail: false,
         dialogEdit: false,
         centerDialogVisible: false,
         bb: false,
-        form: {
-          name: '',
-          region: '',
-          date1: '',
-          date2: '',
-          delivery: false,
-          type: [],
-          resource: '',
-          desc: ''
-        },
+        // form: {
+        //   name: '',
+        //   region: '',
+        //   date1: '',
+        //   date2: '',
+        //   delivery: false,
+        //   type: [],
+        //   resource: '',
+        //   desc: ''
+        // },
         formLabelWidth: '110px'
       }
     },
@@ -259,10 +304,23 @@
 
     methods: {
       // 处理设备详情页
-      handleClickDetail(index, row) {
-
+      handleClickDetail(data) {
         this.dialogDetail = true;
-        console.log(index, row);
+
+        console.log(data);
+        // this.detailData ;
+
+        console.log(data.deviceId)
+        // this.$axios.get('/device/findById',{
+        //   params:{
+        //     deviceId:data.deviceId
+        //   }
+        // }).then(function (res) {
+        //
+        // }).catch(function (err) {
+        //
+        // })
+
       },
       // 处理编辑页，在编辑保存后发出一个请求给服务器，根据返回状态更新本地data数据
       handleClickEdit(index, row) {
@@ -277,20 +335,13 @@
         this.centerDialogVisible = true;
 
       },
-
-
+    },
+    mounted(){
     }
   }
 </script>
 
 <style scoped>
-  /*button{*/
-  /*font-size: 16px;*/
-  /*}*/
-  /*button:hover{*/
-  /*color: #f5f6fa;*/
-  /*background-color: #6173b0;*/
-  /*}*/
   .inner {
     background: url("../../assets/img/icon_more.png") 0 50% no-repeat;
 

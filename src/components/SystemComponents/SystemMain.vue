@@ -29,7 +29,7 @@
             closable
             type="info"
             size="mini"
-            @close="closetag(tag,index,scope.row.serviceHostList)"
+            @close="closetag(tag,index,scope.row)"
             style="margin-right: 2px"
           >
             {{tag.hostName}}
@@ -40,7 +40,7 @@
         <template slot-scope="scope">
           <el-button
             size="mini"
-            @click="handleAdd()" class="el-icon-circle-plus-outline">添加</el-button>
+            @click="handleAdd(scope.row)" ><i class="el-icon-plus"></i>添加</el-button>
         </template>
       </el-table-column>
     </el-table>
@@ -51,197 +51,121 @@
       center>
       <div class="ckeckbox">
         <el-checkbox-group
-          v-model="checkedCities1"
+          v-model="checkedService"
           :min="0"
           :max="4">
-          <el-checkbox v-for="city in cities" :label="city.moduleId" :key="city.moduleId" class="checkBoxStyle">{{city.moduleName}}</el-checkbox>
+          <el-checkbox v-for="serviceHostList in cities" :label="serviceHostList.moduleId" :key="serviceHostList.moduleId">{{serviceHostList.moduleName}}</el-checkbox>
         </el-checkbox-group>
       </div>
       <span slot="footer" class="dialog-footer">
-    <el-button @click="centerDialogVisible = false">取 消</el-button>
-    <el-button type="primary" @click="submitModule">确 定</el-button>
+    <el-button @click="noSubmit()">取 消</el-button>
+    <el-button type="primary" @click="submitService()">确 定</el-button>
   </span>
     </el-dialog>
   </el-main>
 </template>
 
 <script>
-  const cityOptions = ['流媒体','人脸识别','危险物识别'];
   export default {
     name: "system-main",
     data() {
       return {
-        aa:{name:'hah'},
-        tableData:[
-          {
-            "remark": null,
-            "createTime": null,
-            "createId": null,
-            "updateTime": null,
-            "updateId": null,
-            "agentId": "38d6573e71f84288b1deddc8599dd4d4",
-            "ip": "192.168.3.118",
-            "operatingSystem": "Linux",
-            "systemInfo": "{\"memory_info\":\"6.0%\",\"cpu_info\":\"0.9%\"}",
-            "serviceHostList": [
-              {
-                "remark": null,
-                "createTime": null,
-                "createId": null,
-                "updateTime": null,
-                "updateId": null,
-                "hostId": "0954bbc967284d08a67fe498a52e5291",
-                "agentId": "38d6573e71f84288b1deddc8599dd4d4",
-                "code": null,
-                "hostName": "人脸算法",
-                "serviceType": "2",
-                "port": 29931,
-                "status": null,
-                "agent": null
-              },
-              {
-                "remark": null,
-                "createTime": null,
-                "createId": null,
-                "updateTime": null,
-                "updateId": null,
-                "hostId": "1",
-                "agentId": "38d6573e71f84288b1deddc8599dd4d4",
-                "code": null,
-                "hostName": "报警主机",
-                "serviceType": "3",
-                "port": 8001,
-                "status": null,
-                "agent": null
-              },
-              {
-                "remark": null,
-                "createTime": null,
-                "createId": null,
-                "updateTime": null,
-                "updateId": null,
-                "hostId": "4",
-                "agentId": "38d6573e71f84288b1deddc8599dd4d4",
-                "code": null,
-                "hostName": "流媒体",
-                "serviceType": "1",
-                "port": 0,
-                "status": null,
-                "agent": null
-              }
-            ]
-          },
-          {
-            "remark": null,
-            "createTime": null,
-            "createId": null,
-            "updateTime": null,
-            "updateId": null,
-            "agentId": "16ae9c5dcc1045029caeb601615f87d5",
-            "ip": "192.168.2.106",
-            "operatingSystem": "Linux",
-            "systemInfo": "{\"memory_info\":\"3.4%\",\"cpu_info\":\"0.4%\"}",
-            "serviceHostList": [
-              {
-                "remark": null,
-                "createTime": null,
-                "createId": null,
-                "updateTime": null,
-                "updateId": null,
-                "hostId": null,
-                "agentId": "16ae9c5dcc1045029caeb601615f87d5",
-                "code": null,
-                "hostName": '报警主机',
-                "serviceType": null,
-                "port": null,
-                "status": null,
-                "agent": null
-              }
-            ]
-          },
-          {
-            "remark": null,
-            "createTime": null,
-            "createId": null,
-            "updateTime": null,
-            "updateId": null,
-            "agentId": "3dc43278246b4da787eb9e6a7252e949",
-            "ip": "192.168.2.172",
-            "operatingSystem": "windows",
-            "systemInfo": "{\"memory_info\":\"79.6%\",\"cpu_info\":\"5.8%\"}",
-            "serviceHostList": [
-              {
-                "remark": null,
-                "createTime": null,
-                "createId": null,
-                "updateTime": null,
-                "updateId": null,
-                "hostId": null,
-                "agentId": "3dc43278246b4da787eb9e6a7252e949",
-                "code": null,
-                "hostName": null,
-                "serviceType": null,
-                "port": null,
-                "status": null,
-                "agent": null
-              }
-            ]
-          },
-        ],
-        centerDialogVisible:false,
-        checkedCities1: [],
-        cities:[],
-        loading:false
+        // aa:{name:'hah'},
+        // tableData:[],
+        // centerDialogVisible:false,
+        // checkedService: [],
+        // cities:[],
+        // loading:false,
+        // agentId:''
       }
     },
     methods: {
-      handleAdd() {
-        var _this =this
-        this.$axios.post('/moduleInfo/findList',{
-          pageNum:1,
-          pageSize:10
-        }).then(function (res) {
-          // console.log(res.data)
+
+      handleAdd(data) {
+        this.agentId = data.agentId
+        let aId = this.agentId
+        console.log(aId)
+        let _this = this;
+        this.$axios.get('/serviceAgent/findModuleList?agentId='+aId
+        ).then(function (res) {
           _this.cities = res.data.data;
-          console.log(_this.cities)
+           console.log(_this.cities);
+
         }).catch(function (err) {
-          console.log(err)
+          // console.log(err)
         })
         this.centerDialogVisible = true;
       },
+      //  提交服务
+      submitService(){
+        this.centerDialogVisible =false
+        console.log(this.checkedService)
+        var _this = this;
+        this.$axios.post('/serviceAgent/saveHost',{
+            moduleIds:this.checkedService,
+            agentId:this.agentId
+        }).then(function (res) {
+          // console.log(res.status)
+          _this.$axios.post('/serviceAgent/findList',{
+            pageNum:1,
+            pageSize:10
+          }).then(function (res) {
+            // console.log(res)
+            _this.tableData = res.data.data;
+            _this.checkedService =[]
+          }).catch(function (err) {
 
-      submitModule(){
-        this.centerDialogVisible = false
-        console.log(this.checkedCities1)
+          })
+        })
+      },
+      //取消添加
+      noSubmit(){
+        this.centerDialogVisible =false;
+        this.checkedService = []
       },
       closetag(tag,index,data){
         console.log('hello')
         console.log(tag)
         console.log(index)
         console.log(data)
-        console.log()
-        axios.get('/serviceAgent/deleteHost ', {
+        console.log(data.serviceHostList[index].hostId)
+
+        let hostId = data.serviceHostList[index].hostId
+           console.log(hostId)
+        this.$axios.get('/serviceAgent/deleteHost', {
           params: {
-            ID: tag.hostId
+            hostId: hostId
           }
         })
           .then(function (response) {
-            console.log(response);
-            if(response.code == 10200) {
-              data.splice(index,1)
-            }
+            // console.log(response);
+            if(response.status === 200) {
+              data.serviceHostList.splice(index,1)
+            }else {
+              console.log('响应的状态码bushi200')
+          }
           })
           .catch(function (error) {
             console.log(error);
           });
       }
+    },
+
+    mounted(){
+        const _this= this;
+      this.$axios.post('/serviceAgent/findList',{
+        pageNum:1,
+        pageSize:10
+      }).then(function (res) {
+          console.log(res)
+        _this.tableData = res.data.data;
+      }).catch(function (err) {
+
+      })
     }
   }
 </script>
 
 <style scoped>
-  .el-main{
-    background-color:#F5F6FA ;
-  }
 
 </style>

@@ -41,69 +41,69 @@
     </el-table>
 
     <!--详情模态框-->
-    <el-dialog title="设备详情:" :visible.sync="dialogDetail">
-      <el-form :model="detailsData">
-        <el-col :span="12">
-          <el-form-item label="名称:" :label-width="formLabelWidth">
-            <span>{{detailsData.name}}</span>
-          </el-form-item>
-        </el-col>
-        <el-col :span="12">
-          <el-form-item label="产商:" :label-width="formLabelWidth">
-            <span>{{detailsData.name}}</span>
-          </el-form-item>
-        </el-col>
-        <el-col :span="12">
-          <el-form-item label="用户名:" :label-width="formLabelWidth">
-            <span>{{detailsData.name}}</span>
-          </el-form-item>
-        </el-col>
-        <el-col :span="12">
-          <el-form-item label="密码:" :label-width="formLabelWidth">
-            <span>{{detailsData.name}}</span>
-          </el-form-item>
-        </el-col>
-        <el-col :span="12">
-          <el-form-item label="IP:" :label-width="formLabelWidth">
-            <span>{{detailsData.name}}</span>
-          </el-form-item>
-        </el-col>
-        <el-col :span="12">
-          <el-form-item label="端口号:" :label-width="formLabelWidth">
-            <span>{{detailsData.name}}</span>
-          </el-form-item>
-        </el-col>
-        <el-col :span="12">
-          <el-form-item label="安装地点:" :label-width="formLabelWidth">
-            <span>{{detailsData.name}}</span>
-          </el-form-item>
-        </el-col>
-        <el-col :span="12">
-          <el-form-item label="流分发服务器:" :label-width="formLabelWidth">
-            <span>{{detailsData.name}}</span>
-          </el-form-item>
-        </el-col>
-        <el-col :span="12">
-          <el-form-item label="设备型号:" :label-width="formLabelWidth">
-            <span>{{detailsData.name}}</span>
-          </el-form-item>
-        </el-col>
-        <el-col :span="12">
-          <el-form-item label="通道个数:" :label-width="formLabelWidth">
-            <span>{{detailsData.name}}</span>
-          </el-form-item>
-        </el-col>
-        <el-col :span="24">
-          <el-form-item label="备注:" :label-width="formLabelWidth">
-            <span>{{detailsData.name}}</span>
-          </el-form-item>
-        </el-col>
-      </el-form>
-      <div slot="footer" class="dialog-footer" style="text-align: center">
-        <el-button @click="dialogDetail = false">取 消</el-button>
-        <el-button type="primary" @click="dialogDetail = false">确 定</el-button>
-      </div>
-    </el-dialog>
+    <!--<el-dialog title="设备详情:" :visible.sync="dialogDetail">-->
+      <!--<el-form :model="detailsData">-->
+        <!--<el-col :span="12">-->
+          <!--<el-form-item label="名称:" :label-width="formLabelWidth">-->
+            <!--<span>{{detailsData.name}}</span>-->
+          <!--</el-form-item>-->
+        <!--</el-col>-->
+        <!--<el-col :span="12">-->
+          <!--<el-form-item label="产商:" :label-width="formLabelWidth">-->
+            <!--<span>{{detailsData.name}}</span>-->
+          <!--</el-form-item>-->
+        <!--</el-col>-->
+        <!--<el-col :span="12">-->
+          <!--<el-form-item label="用户名:" :label-width="formLabelWidth">-->
+            <!--<span>{{detailsData.name}}</span>-->
+          <!--</el-form-item>-->
+        <!--</el-col>-->
+        <!--<el-col :span="12">-->
+          <!--<el-form-item label="密码:" :label-width="formLabelWidth">-->
+            <!--<span>{{detailsData.name}}</span>-->
+          <!--</el-form-item>-->
+        <!--</el-col>-->
+        <!--<el-col :span="12">-->
+          <!--<el-form-item label="IP:" :label-width="formLabelWidth">-->
+            <!--<span>{{detailsData.name}}</span>-->
+          <!--</el-form-item>-->
+        <!--</el-col>-->
+        <!--<el-col :span="12">-->
+          <!--<el-form-item label="端口号:" :label-width="formLabelWidth">-->
+            <!--<span>{{detailsData.name}}</span>-->
+          <!--</el-form-item>-->
+        <!--</el-col>-->
+        <!--<el-col :span="12">-->
+          <!--<el-form-item label="安装地点:" :label-width="formLabelWidth">-->
+            <!--<span>{{detailsData.name}}</span>-->
+          <!--</el-form-item>-->
+        <!--</el-col>-->
+        <!--<el-col :span="12">-->
+          <!--<el-form-item label="流分发服务器:" :label-width="formLabelWidth">-->
+            <!--<span>{{detailsData.name}}</span>-->
+          <!--</el-form-item>-->
+        <!--</el-col>-->
+        <!--<el-col :span="12">-->
+          <!--<el-form-item label="设备型号:" :label-width="formLabelWidth">-->
+            <!--<span>{{detailsData.name}}</span>-->
+          <!--</el-form-item>-->
+        <!--</el-col>-->
+        <!--<el-col :span="12">-->
+          <!--<el-form-item label="通道个数:" :label-width="formLabelWidth">-->
+            <!--<span>{{detailsData.name}}</span>-->
+          <!--</el-form-item>-->
+        <!--</el-col>-->
+        <!--<el-col :span="24">-->
+          <!--<el-form-item label="备注:" :label-width="formLabelWidth">-->
+            <!--<span>{{detailsData.name}}</span>-->
+          <!--</el-form-item>-->
+        <!--</el-col>-->
+      <!--</el-form>-->
+      <!--<div slot="footer" class="dialog-footer" style="text-align: center">-->
+        <!--<el-button @click="dialogDetail = false">取 消</el-button>-->
+        <!--<el-button type="primary" @click="dialogDetail = false">确 定</el-button>-->
+      <!--</div>-->
+    <!--</el-dialog>-->
     <!--编辑模态框-->
     <el-dialog title="设备编辑" :visible.sync="dialogEdit">
       <el-form :model="detailsData" :label-width="30">

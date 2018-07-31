@@ -72,6 +72,9 @@
         }],
         loading: true
       };
+    },
+    mounted(){
+
     }
   };
 </script>
