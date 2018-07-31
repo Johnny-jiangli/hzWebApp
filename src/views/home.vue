@@ -15,7 +15,7 @@
           <el-col :span="6" style="height: 100%;">
             <div class="rightAside">
               <div>
-                12345567
+                12345567sdadsa
               </div>
               <div>
                 <warning-and-monitor-aside>
